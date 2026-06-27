@@ -5,6 +5,9 @@
   "type": "module",
   "scripts": {
     "start": "npx vite",
+    "typecheck": "npx tsc",
+    "lint": "npx eslint src",
+    "format": "npx prettier --write .",
     "build": "npx tsc && npx vite build"
   },
   "dependencies": {

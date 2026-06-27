@@ -3,19 +3,17 @@
 import "./brand.js";
 
 import { onReadyToLaunch, Sim } from "scenerystack/sim";
-import { StringProperty } from "scenerystack/axon";
 import { Tandem } from "scenerystack/tandem";
-import { SimScreen } from "./screen-name/SimScreen.js";
+import MembraneTransportScreen from "./membrane-transport/MembraneTransportScreen.js";
+import MembraneTransportStrings from "./membrane-transport/MembraneTransportStrings.js";
 
 onReadyToLaunch(() => {
-  // The title, like most string-like things, is a StringProperty that can change to different values (e.g. for
-  // different languages, see localeProperty from scenerystack/joist)
-  const titleStringProperty = new StringProperty("Membrane Transport");
-
   const screens = [
-    new SimScreen({ tandem: Tandem.ROOT.createTandem("simScreen") }),
+    new MembraneTransportScreen({
+      tandem: Tandem.ROOT.createTandem("membraneTransportScreen"),
+    }),
   ];
 
-  const sim = new Sim(titleStringProperty, screens);
+  const sim = new Sim(MembraneTransportStrings.titleStringProperty, screens);
   sim.start();
 });
